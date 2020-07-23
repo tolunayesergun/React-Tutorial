@@ -6,25 +6,26 @@ import ProductsList from './ProductsList';
 
 export default class App extends Component {
 
-  state={
-   
-    selectedCategoryID:0
-}
+  state = {
 
-  kategoriSec =(c)=>{
+    selectedCategoryID: 0
+  }
 
-    this.setState({selectedCategoryID:c.id})
-}
+  kategoriSec = (c) => {
+
+    this.setState({ selectedCategoryID: c.id })
+  }
 
   render() {
-    let categoryInfo ={title:"Kategori Listesi"}
-    let productInfo ={title:"Ürünler Listesi"}
+    let categoryInfo = { title: "Kategori Listesi" }
+    let productInfo = { title: "Ürünler Listesi" }
     return (
       <div>
+          <Navi/>
         <Container>
-          <Row>
-            <Navi />
-          </Row>
+
+        
+
           <Row>
             <Col xs="3">
               <CategoryList selectedCategoryID={this.state.selectedCategoryID} kategoriSec={this.kategoriSec} info={categoryInfo} />

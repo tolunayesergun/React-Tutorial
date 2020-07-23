@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table } from 'reactstrap'
+import { Table,Button } from 'reactstrap'
 
 
 export default class ProductsList extends Component {
@@ -21,24 +21,23 @@ export default class ProductsList extends Component {
                 <Table>
                     <thead>
                         <tr>
-                            <th>#</th>
                             <th>id</th>
-                            <th>categoryId</th>
                             <th>productName</th>
                             <th>quantityPerUnit</th>
                             <th>unitPrice</th>
                             <th>unitsInStock</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state._Products.filter(p => this.props.selectedCategoryID === p.categoryId).map(p =>
                             <tr key={p.id}>
                                 <td>{p.id}</td>
-                                <td>{p.categoryId}</td>
                                 <td>{p.productName}</td>
                                 <td>{p.quantityPerUnit}</td>
                                 <td>{p.unitPrice}</td>
                                 <td>{p.unitsInStock}</td>
+                                <td> <Button color="info">Sepete Ekle</Button></td>
                             </tr>
                         )}
                     </tbody>
