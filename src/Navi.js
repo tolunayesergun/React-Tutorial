@@ -28,7 +28,7 @@ export default class Navi extends Component {
               </NavItem>
 
             </Nav>
-           <CartSummary cart={this.props.cart}/>
+           <CartSummary cart={this.props.cart} sepettenKaldir={this.props.sepettenKaldir} />
           </Collapse>
         </Navbar>
       </div>

@@ -7,6 +7,7 @@ import {
     DropdownItem,
     Badge,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 export default class CartSummary extends Component {
 
     renderSummary = () => {
@@ -20,13 +21,16 @@ export default class CartSummary extends Component {
                 <DropdownMenu right>
                     {
                         this.props.cart.map(cartItem => (
-                            <DropdownItem key={cartItem.products.id}>
+                            <DropdownItem toggle={false} key={cartItem.products.id}>
+                                  <Badge style={{ marginRight: 6 }} onClick={ () => this.props.sepettenKaldir(cartItem.products)} color="danger">X</Badge>
                                 {cartItem.products.productName}
                                 <Badge style={{ marginLeft: 6 }} color="info">{cartItem.quantity}</Badge>
                             </DropdownItem>
                         ))
                     }
-
+                   <DropdownItem>
+                       <Link to="cart">Sepete Git</Link>
+                   </DropdownItem>
                 </DropdownMenu>
             </UncontrolledDropdown>
         );
