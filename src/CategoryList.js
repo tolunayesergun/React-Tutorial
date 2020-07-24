@@ -17,7 +17,7 @@ fetch("http://localhost:3000/categories").then(r=> r.json()).then(data=>this.set
             <div>
                 <h3>{this.props.info.title}</h3>
                 <ListGroup>
-             {this.state._categories.map(c=> <ListGroupItem active={c.id===this.props.selectedCategoryID} onClick={ () => this.props.kategoriSec(c)} key={c.id}>{c.categoryName}</ListGroupItem>)}
+             {this.state._categories.map(c=> <ListGroupItem  active={c.id===this.props.selectedCategoryID} onClick={ () => this.props.kategoriSec(c)} key={c.id}>{c.categoryName}</ListGroupItem>)}
                   
                 </ListGroup>
 

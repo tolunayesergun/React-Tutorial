@@ -9,10 +9,11 @@ export default class ProductsList extends Component {
     componentDidMount = () => {
         this.getProducts();
 
-    }
+    };
+
     getProducts = () => {
         fetch("http://localhost:3000/products").then(s => s.json()).then(data => this.setState({ _Products: data }))
-    }
+    };
     render() {
         return (
             <div>
@@ -37,7 +38,7 @@ export default class ProductsList extends Component {
                                 <td>{p.quantityPerUnit}</td>
                                 <td>{p.unitPrice}</td>
                                 <td>{p.unitsInStock}</td>
-                                <td> <Button color="info">Sepete Ekle</Button></td>
+                                <td> <Button color="info" onClick={ () => this.props.sepeteEkle(p)}>Sepete Ekle</Button></td>
                             </tr>
                         )}
                     </tbody>
