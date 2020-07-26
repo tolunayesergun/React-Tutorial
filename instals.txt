@@ -1,0 +1,9 @@
+npm  install react-router-dom
+npm install alertifyjs
+npm install -g json-server
+npm install  bootstrap
+npm install reactstrap
+
+json-server --watch db.json
+Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy Restricted

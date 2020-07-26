@@ -59,35 +59,58 @@ export default class App extends Component {
 
 
 
-          <Row style={{ paddingTop: 50 }}>
-            <Col xs="3">
-              <CategoryList selectedCategoryID={this.state.selectedCategoryID} kategoriSec={this.kategoriSec} info={categoryInfo} />
-            </Col>
-            <Col xs="9">
-              <Switch>
-                <Route exact path="/" render={props => (
-                  <ProductsList
-                    {...props}
-                    selectedCategoryID={this.state.selectedCategoryID}
-                    sepeteEkle={this.sepeteEkle}
-                    cartLength={this.state.cartLength}
-                    info={productInfo} />
+
+          <Switch>
+
+            <Route exact path="/" render={props => (
+              <div>
+                <Row style={{ paddingTop: 50 }}>
+                  <Col xs="3">
+                    <CategoryList
+                      {...props}
+                      selectedCategoryID={this.state.selectedCategoryID}
+                      kategoriSec={this.kategoriSec}
+                      info={categoryInfo} />
+                  </Col>
+
+                  <Col xs="9">
+                    <ProductsList
+                      {...props}
+                      selectedCategoryID={this.state.selectedCategoryID}
+                      sepeteEkle={this.sepeteEkle}
+                      cartLength={this.state.cartLength}
+                      info={productInfo} />
+                  </Col>
+                </Row>
+              </div>
+            )} />
+
+            <Route exact path="/cart" render={props => (
+              <div>
+                <Row style={{ paddingTop: 50 }}>
+
+                  <Col xs="12">
+                    <CartList
+                      {...props}
+                      cart={this.state.cart}
+                      sepettenKaldir={this.sepettenKaldir}
+                    />
+                  </Col>
+
+                </Row>
+              </div>
                 )} />
 
-                <Route exact path="/cart" render={props => (
-                  <CartList
-                    {...props}
-                    cart={this.state.cart}
-                    sepettenKaldir={this.sepettenKaldir}
-                  />
-                )} />
 
-                <Route component={NotFound} />
 
-              </Switch>
+            <Route component={NotFound} />
 
-            </Col>
-          </Row>
+
+
+          </Switch>
+
+
+
         </Container>
       </div>
     );

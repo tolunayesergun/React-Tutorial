@@ -10,11 +10,14 @@ import {
 import { Link } from 'react-router-dom';
 export default class CartSummary extends Component {
 
+    sepeteGit=()=>{
+       
+}
     renderSummary = () => {
 
         return (
-            <UncontrolledDropdown inNavbar>
-                <DropdownToggle className="text-muted" nav caret>
+            <UncontrolledDropdown onDoubleClick={ () => this.sepeteGit()} inNavbar>
+                <DropdownToggle  className="text-muted" nav caret>
                     Sepetim ({this.props.cart.length})
             </DropdownToggle>
 
@@ -40,9 +43,9 @@ export default class CartSummary extends Component {
 
         return (
             <UncontrolledDropdown inNavbar>
-                <p style={{paddingRight:15,paddingTop:8,fontSize:16}} className="text-muted" nav caret>
+                <Link to="cart" style={{paddingRight:16 ,paddingTop:8,fontSize:16}} className="text-muted" nav caret>
                     Sepetim 
-            </p>
+            </Link>
             </UncontrolledDropdown>
         );
     }

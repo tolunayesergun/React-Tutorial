@@ -3,11 +3,11 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import CartSummary from './CartSummary';
 
 export default class Navi extends Component {
@@ -16,7 +16,7 @@ export default class Navi extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Stork App</NavbarBrand>
+          <Link to="/" className="text-muted">Stork App</Link>
           <NavbarToggler  />
           <Collapse  navbar>
             <Nav className="mr-auto" navbar>
