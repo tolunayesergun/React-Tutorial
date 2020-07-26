@@ -7,6 +7,7 @@ import alertify from 'alertifyjs'
 import { Route, Switch } from 'react-router-dom';
 import NotFound from './NotFound'
 import CartList from './CartList'
+import LoginForm from './LoginForm';
 export default class App extends Component {
 
   state = {
@@ -99,9 +100,11 @@ export default class App extends Component {
 
                 </Row>
               </div>
-                )} />
+            )} />
 
-
+            <Route path="/login" render={props=>(
+            <LoginForm/>
+            )}/>
 
             <Route component={NotFound} />
 

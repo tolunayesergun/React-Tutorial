@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 export default class CartSummary extends Component {
 
     sepeteGit=()=>{
+        return(<Link to="cart"></Link>);
        
 }
     renderSummary = () => {
